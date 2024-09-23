@@ -1,4 +1,5 @@
-Coffee Sales Data Analysis
+**Coffee Sales Data Analysis**
+
 This project performs a comprehensive analysis of coffee sales data, covering steps from data cleaning and exploration to building a machine learning model that predicts sales based on various features.
 
 Table of Contents
@@ -20,10 +21,10 @@ Model Evaluation
 Model Interpretation
 Conclusion
 
-Introduction
+**Introduction**
 This project analyzes coffee sales data, cleans and prepares the data, performs exploratory analysis, and finally builds a simple linear regression model to predict sales. The objective is to uncover trends and understand the factors affecting sales.
 
-Dataset Description
+**Dataset Description**
 The dataset includes coffee sales transactions with the following columns:
 
 date: The transaction date.
@@ -32,8 +33,10 @@ cash_type: Payment method (e.g., card).
 card: An anonymized identifier for the payment card.
 money: Amount spent in the transaction (target variable).
 coffee_name: The type of coffee purchased.
-Setup
-Clone the repository:
+
+**Setup**
+
+**Clone the repository:**
 
 bash
 Copy code
@@ -50,26 +53,28 @@ Copy code
 pip install pandas scikit-learn matplotlib seaborn
 Place the coffee_sales.csv file in the project directory.
 
-Run the Python script to execute the analysis:
-
+**Run the Python script to execute the analysis:
+**
 bash
 Copy code
 python coffee_sales_analysis.py
 Data Preparation and Cleaning
-Handling Missing Values:
+
+**Handling Missing Values:**
 
 Missing numerical values (money) are filled using the median value.
 Categorical values (coffee_name) are filled with the most frequent (mode) value.
 Converting Data Types:
 
 The date column is converted to a datetime format to allow for time-based operations.
-Removing Outliers:
+
+**Removing Outliers:**
 
 Outliers in the numerical columns (money) are removed using Z-scores with a threshold of 3 standard deviations.
 Exploratory Data Analysis (EDA)
 Visualizations are generated to uncover patterns and insights:
 
-Sales Over Time:
+**Sales Over Time:**
 
 A line plot showing how sales vary over different months of the year.
 Example Code:
@@ -91,11 +96,16 @@ plt.figure(figsize=(10, 6))
 sns.barplot(data=data, x='coffee_name', y='money')
 plt.title('Sales by Coffee Type')
 plt.show()
-Machine Learning Modeling
-Feature Engineering
+
+**Machine Learning Modeling**
+
+**Feature Engineering**
+
 Extract the month and year from the date column and use them as features.
 Drop the original date column after extraction.
-Splitting the Data
+
+**Splitting the Data**
+
 The dataset is split into training and testing sets:
 
 python
@@ -129,7 +139,8 @@ r2 = r2_score(y_test, y_pred)
 
 print(f'Mean Squared Error: {mse}')
 print(f'R^2 Score: {r2}')
-Model Interpretation
+
+**Model Interpretation**
 You can interpret the model by looking at the coefficients for each feature:
 
 python
